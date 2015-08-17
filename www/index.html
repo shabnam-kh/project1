@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/iscroll/build/iscroll-zoom.js"></script>
+    <!--<script src="js/information.js"></script>-->
+    <script src="js/function.js"></script>
+    <script src="js/loadData.js"></script>
+
+<!-- Bootstrap -->
+       <!-- Bootstrap core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap theme -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+<script type="text/javascript">
+
+var myScroll;
+
+function loaded () {
+	myScroll = new IScroll('#wrapper', {
+		zoom: true,
+		scrollX: true,
+		scrollY: true,
+		mouseWheel: true,
+		wheelAction: 'zoom'
+	});
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+</script>
+    <style>
+        * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-ms-touch-action: none;
+}
+
+        body{
+            overflow: hidden;  /*this is important to prevent the whole page to bounce
+            /*background:url("img/imageedit_3_7474622037.png");*/
+            /*background-repeat: no-repeat;*/
+            /*-webkit-background-size: cover;*/
+            /*-moz-background-size: cover;*/
+            /*-o-background-size: cover;*/
+            /*background-size: cover;*/
+
+        }
+            @media screen and (max-width: 500px) {
+
+}
+            .gwd-div-qlio {
+      position: absolute;
+      width: 59px;
+      height: 18px;
+      left: 936px;
+      top: 0px;
+    }
+/*.inputSize{*/
+    /*width: 70px;*/
+    /*height: 20px;*/
+    /*width: 4.5%;*/
+    /*height: 2.5%;*/
+/*}*/
+.smallDevice{
+        /*width: 9%;*/
+    /*height: 3%;*/
+    /*font-size: xx-small;*/
+    font-size: 0.2cm;
+
+}
+.XsmallDevice{
+    font-size: 0.08cm;
+}
+        .motorInput{
+            position: absolute;
+            top:0.5%;
+        }
+         .motorSecondInput{
+            position: absolute;
+            top:5.5%;
+        }
+         .Mmotors{
+             position: absolute;
+            top:70%;
+
+         }
+        input{
+            background-color: gray;
+            color: #ffffff;
+        }
+        #whole{
+            position: fixed;
+        }
+        .flair{
+            position: absolute;
+            width:10%;
+            top:10%;
+            background-image: none;
+            background-color: transparent;
+            display: none;
+            /*visibility: hidden;*/
+        }
+        .indicatorLight{
+            width: 1%;
+            height: 2%;
+            border-radius: 100%;
+        }
+
+        .red{
+            background-color: red;
+            display: none;
+        }
+        .green{
+            background-color: greenyellow;
+            display: none;
+        }
+        .waterLevel{
+                background-color: dodgerblue;
+            width: 1.5%;
+            height: 2.5%;
+            border-radius: 100%;
+            display: none;
+        }
+        .zoomFont{
+            font-size: 70%;
+        }
+        label{
+            font-size: 120%;
+        }
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background: #ccc;
+	overflow: hidden;
+}
+
+#scroller {
+	position: absolute;
+	z-index: 1;
+	/*-webkit-transform: translateZ(0);*/
+	/*-moz-transform: translateZ(0);*/
+	/*-ms-transform: translateZ(0);*/
+	/*-o-transform: translateZ(0);*/
+	/*transform: translateZ(0);*/
+	/*-webkit-touch-callout: none;*/
+	/*-webkit-user-select: none;*/
+	/*-moz-user-select: none;*/
+	/*-ms-user-select: none;*/
+	/*user-select: none;*/
+	/*-webkit-text-size-adjust: none;*/
+	/*-moz-text-size-adjust: none;*/
+	/*-ms-text-size-adjust: none;*/
+	/*-o-text-size-adjust: none;*/
+	/*text-size-adjust: none;*/
+}
+    </style>
+</head>
+<body  onload="loaded()">
+<div id="wrapper">
+<!--&lt;!&ndash;<iframe id="frame" style="width: 250px;display: none" ></iframe>&ndash;&gt;-->
+    	<div id="scroller">
+      <label  style="left:82%;position: absolute;top:22.5%;">52.5</label>
+            <label  style="left:27%;position: absolute;top:6%;">92.3</label>
+            <label  style="left:27%;position: absolute;top:86%;">2.8</label>
+<img id="backImg" src='img/4.bmp' style='width:100%; max-height:100%; border:0;'>
+
+    </div>
+    </div>
+<script>
+
+        $(document).ready(function() {
+
+//            $("#backImg").attr("height",$(window).height());
+                changeSize();
+//                  setSize(function(){
+//                console.log("image size "+$("#backImg").width()+" "+$("#backImg").height());
+//                console.log("size "+$(window).width()+" "+$(window).height());
+//                console.log("second size "+$("#whole").width()+" "+$("#whole").height());
+//                $("input").show();
+//            })
+
+
+//            changeSize();
+
+        });
+
+     $(window).resize(function() {
+         changeSize();
+//             $("#backImg").attr("height",$(window).height());
+         //setImgSize(function(){
+//                   setSize(function(){
+//                console.log("image size "+$("#backImg").width()+" "+$("#backImg").height());
+//                console.log("size "+$(window).width()+" "+$(window).height());
+//                console.log("second size "+$("#whole").width()+" "+$("#whole").height());
+//         })
+        // })
+
+//         changeSize();
+        });
+//    function changeClass(callback){
+//        $("input").removeClass("inputSize");
+//        $("label").removeClass("inputSize");
+//        callback();
+//    }
+        function changeSize(){
+            console.log("changesize function");
+            setSize(function(){
+                console.log("window size "+$(window).width()+" * "+$(window).height());
+                console.log("image size "+$("#backImg").width()+" * "+$("#backImg").height());
+            })
+if($(window).width()<=500){
+    console.log("change size first condition is true;");
+      $("label").addClass("XsmallDevice");
+}else if($(window).width()<=700){
+             console.log("change size second condition is true;");
+//                changeClass(function(){
+//                    $("input").addClass("smallInputSize");
+                    $("label").addClass("smallDevice");
+                //})
+            }
+
+    }
+//                    function zoomChangeSize(){
+//            console.log("changesize function");
+//if($(window).innerWidth()<=500){
+//    console.log("change size first condition is true;");
+//      $("label").addClass("XsmallDevice");
+//}else if($(window).innerWidth()<=700){
+//             console.log("change size second condition is true;");
+////                changeClass(function(){
+////                    $("input").addClass("smallInputSize");
+//                    $("label").addClass("smallDevice");
+//                //})
+//            }
+//
+//    }
+//            function makeInviisible(id,callback){
+//                console.log("hide old image");
+//                $("#"+id).hide();
+//                callback();
+//            }
+//                function makeViisible(id,callback){
+//  console.log("load new image");
+//                    $("#"+id).show();
+//                callback();
+//            }
+//
+function setSize(callback){
+    console.log("setSize function");
+   $("#backImg").width($(window).width());
+    $("#backImg").height($(window).height());
+    callback();
+};
+//    function zoomSize(callback){
+//    console.log("setSize function");
+//    $("#whole").width($("#zoombackImg").width());
+//    $("#whole").height($("#zoombackImg").height());
+//    callback();
+//};
+
+</script>
+</body>
+</html>
